@@ -16,6 +16,20 @@ export default function Home() {
               <p className="mt-3 text-base text-gray-600 dark:text-gray-300 sm:mt-5 sm:text-lg md:mt-5 md:text-xl lg:mx-0 mb-6">
                 Building scalable data solutions and ETL pipelines on AWS. Passionate about transforming raw data into valuable insights.
               </p>
+              
+              {/* Profile image shown in mobile view before buttons */}
+              <div className="flex justify-center mb-8 md:hidden">
+                <div className="w-64 h-64 relative rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400 shadow-xl">
+                  <Image 
+                    src="/profile.svg" 
+                    alt="Brajesh Kumar Jha" 
+                    fill 
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              
               <div className="mt-5 sm:mt-8 sm:flex">
                 <div className="rounded-md shadow">
                   <Link href="/projects" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
@@ -29,7 +43,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="md:w-1/2 flex justify-center">
+            <div className="md:w-1/2 hidden md:flex justify-center">
               <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 relative rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400 shadow-xl">
                 <Image 
                   src="/profile.svg" 
