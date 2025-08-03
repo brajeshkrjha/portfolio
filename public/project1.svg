@@ -1,0 +1,9 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#4F46E5" />
+  <text x="50%" y="50%" font-family="Arial" font-size="24" fill="white" text-anchor="middle" dominant-baseline="middle">
+    Commercial Prefill DataLake
+  </text>
+  <text x="50%" y="65%" font-family="Arial" font-size="16" fill="white" text-anchor="middle" dominant-baseline="middle">
+    AWS Data Engineering Project
+  </text>
+</svg>
