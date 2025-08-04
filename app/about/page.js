@@ -17,7 +17,7 @@ export default function About() {
           <div className="md:w-1/3">
             <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden shadow-lg">
               <Image 
-                src="/profile.svg" 
+                src="/my_img.jpg" 
                 alt="Brajesh Kumar Jha" 
                 width={400}
                 height={400}
@@ -63,7 +63,7 @@ export default function About() {
                   <svg className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <a href="mailto:contact@example.com" className="text-blue-600 dark:text-blue-400 hover:underline">contact@example.com</a>
+                  <a href="mailto:brajeshjha2001@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">brajeshjha2001@gmail.com</a>
                 </div>
               </div>
             </div>

@@ -21,7 +21,7 @@ export default function Home() {
               <div className="flex justify-center mb-8 md:hidden">
                 <div className="w-64 h-64 relative rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400 shadow-xl">
                   <Image 
-                    src="/profile.svg" 
+                    src="/my_img.jpg" 
                     alt="Brajesh Kumar Jha" 
                     fill 
                     className="object-cover"
@@ -46,7 +46,7 @@ export default function Home() {
             <div className="md:w-1/2 hidden md:flex justify-center">
               <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 relative rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400 shadow-xl">
                 <Image 
-                  src="/profile.svg" 
+                  src="/my_img.jpg" 
                   alt="Brajesh Kumar Jha" 
                   fill 
                   className="object-cover"

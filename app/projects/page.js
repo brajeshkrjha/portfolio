@@ -82,7 +82,7 @@ export default function Projects() {
         "Received positive feedback for intuitive user interface"
       ],
       image: "/project3.svg", // Placeholder image
-      link: "https://github.com/username/rajya" // Placeholder link
+      link: "https://github.com/brajeshkrjha/rajya" // Placeholder link
     },
     {
       id: "todo-app",
@@ -107,7 +107,7 @@ export default function Projects() {
         "Created a responsive design that works across devices"
       ],
       image: "/project4.svg", // Placeholder image
-      link: "https://github.com/username/todo-app" // Placeholder link
+      link: "https://github.com/brajeshkrjha/todo-app" // Placeholder link
     }
   ];
 

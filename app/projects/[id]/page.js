@@ -88,7 +88,7 @@ export default function ProjectDetail() {
         "Received positive feedback for intuitive user interface"
       ],
       image: "/project3.svg",
-      link: "https://github.com/username/rajya"
+      link: "https://github.com/brajeshkrjha/rajya"
     },
     {
       id: "todo-app",
@@ -113,7 +113,7 @@ export default function ProjectDetail() {
         "Created a responsive design that works across devices"
       ],
       image: "/project4.svg",
-      link: "https://github.com/username/todo-app"
+      link: "https://github.com/brajeshkrjha/todo-app"
     }
   ];
 

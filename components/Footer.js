@@ -32,7 +32,7 @@ export default function Footer() {
               </svg>
             </Link>
             <Link 
-              href="mailto:contact@example.com" 
+              href="mailto:brajeshjha2001@gmail.com" 
               className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <span className="sr-only">Email</span>

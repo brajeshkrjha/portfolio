@@ -71,7 +71,7 @@ export default function Contact() {
                 <div className="ml-3">
                   <p className="text-sm font-medium text-gray-900 dark:text-white">Email</p>
                   <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-                    <a href="mailto:contact@example.com" className="text-blue-600 dark:text-blue-400 hover:underline">contact@example.com</a>
+                    <a href="mailto:brajeshjha2001@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">brajeshjha2001@gmail.com</a>
                   </p>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function Contact() {
                       </svg>
                     </a>
                     <a 
-                      href="https://github.com/username" 
+                      href="https://github.com/brajeshkrjha" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
