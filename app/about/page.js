@@ -73,26 +73,82 @@ export default function About() {
             <div className="prose prose-blue dark:prose-invert max-w-none">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">My Journey</h2>
               
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.
-              </p>
-              
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.
-              </p>
+              <div className="mb-6">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-4">
+                  <div className="w-full md:w-2/3">
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Professional Experience</h4>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      I started my career with ValueMomentum in August 2023, where I've been working in the Data Engineering department.
+                    </p>
+                    <p className="text-gray-700 dark:text-gray-300">
+                      In my first project, I had the opportunity to work with MarkLogic and Data Hub Framework to implement data harmonization, consumption, data lake in AWS, and REST API services. Later, I moved to a full-fledged AWS data engineering project, where I gained experience with various AWS services as part of the data lake team. I collaborate with team members from both India and the USA, following Agile methodologies. Currently, I'm continuing in the same team and work role.
+                    </p>
+                  </div>
+                  <div className="w-full md:w-1/3 flex-shrink-0">
+                    <div className="rounded-lg overflow-hidden shadow-md h-48 relative">
+                      <Image 
+                        src="https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/0_z53c0ybh/def_height/2700/def_width/2700/version/100012/type/1" 
+                        alt="ValueMomentum" 
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="transition-transform hover:scale-105 duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
               
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Education</h3>
               
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6 shadow-md">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Bachelor of Technology</h4>
-                <p className="text-gray-600 dark:text-gray-400">Computer Science and Engineering</p>
-                <p className="text-gray-600 dark:text-gray-400">University Name, 2017-2021</p>
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="w-full md:w-2/3">
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Bachelor of Technology</h4>
+                    <p className="text-gray-600 dark:text-gray-400">Information Technology</p>
+                    <p className="text-gray-600 dark:text-gray-400">Bengal Institute of Technology, Kolkata, West Bengal (2019-2023)</p>
+                    <p className="text-gray-600 dark:text-gray-400 mt-2">I completed my B.Tech graduation from Bengal Institute of Technology in Information Technology. BIT is a renowned engineering college under Techno India Group, established in 2000 and NAAC accredited with B++ rating.</p>
+                    <p className="text-gray-600 dark:text-gray-400">During my time at BIT, I actively participated in various hackathons including Toycathon, Smart India Hackathon, and Toys and Games hackathon. I was proud to reach the grand finale round for Toycathon, which was a significant achievement in my academic journey.</p>
+                  </div>
+                  <div className="w-full md:w-1/3 flex-shrink-0">
+                    <div className="rounded-lg overflow-hidden shadow-md h-48 relative">
+                      <Image 
+                        src="https://technotimes.info/wp-content/uploads/2025/06/image-3.png" 
+                        alt="Bengal Institute of Technology" 
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="transition-transform hover:scale-105 duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-6 shadow-md">
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="w-full md:w-2/3">
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Schooling</h4>
+                    <p className="text-gray-600 dark:text-gray-400">Rajkamal Saraswati Vidya Mandir, Dhanbad, Jharkhand</p>
+                    <p className="text-gray-600 dark:text-gray-400 mt-2">I completed my education till Class 12th at RSVM, a CBSE-affiliated school established in 1978. The school is known for its holistic approach to education and excellent academic standards.</p>
+                    <p className="text-gray-600 dark:text-gray-400">I chose Science stream for my 11th and 12th grades, which laid the foundation for my engineering career. My introduction to SQL and Java began in Class 11 through the Information Practices subject, which sparked my interest in programming and ultimately helped me choose my career path in technology.</p>
+                  </div>
+                  <div className="w-full md:w-1/3 flex-shrink-0">
+                    <div className="rounded-lg overflow-hidden shadow-md h-48 relative">
+                      <Image 
+                        src="https://rsvm.in/uploads/gallery/media/Front.jpg" 
+                        alt="Rajkamal Saraswati Vidya Mandir" 
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="transition-transform hover:scale-105 duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
               
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Career Goals</h3>
               
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.
+                My goal is to grow in the data engineering field and solve complex data problems with AWS. While I'm also open to Azure or GCP, my primary focus is on AWS technologies. In the future, I aspire to work on machine learning pipelines and tackle big data challenges.
               </p>
               
               <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -110,9 +166,9 @@ export default function About() {
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Hobbies</h4>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
                     <li>Reading Tech Blogs</li>
-                    <li>Contributing to Open Source</li>
-                    <li>Hiking</li>
-                    <li>Photography</li>
+                    <li>Chess</li>
+                    <li>Drawing</li>
+                    <li>Sleeping</li>
                   </ul>
                 </div>
               </div>

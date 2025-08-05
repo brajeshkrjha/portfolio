@@ -1,0 +1,7 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f0f0f0" rx="10" ry="10" />
+  <text x="200" y="120" font-family="Arial" font-size="24" text-anchor="middle" fill="#555555">AWS Certified</text>
+  <text x="200" y="160" font-family="Arial" font-size="28" font-weight="bold" text-anchor="middle" fill="#555555">Coming Soon</text>
+  <rect x="100" y="190" width="200" height="40" rx="5" ry="5" fill="#0077cc" opacity="0.7" />
+  <text x="200" y="217" font-family="Arial" font-size="18" text-anchor="middle" fill="white">Solutions Architect</text>
+</svg>

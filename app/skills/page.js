@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Skills() {
   // Define skill categories and their items
   const skillCategories = [
@@ -85,7 +87,7 @@ export default function Skills() {
         </div>
 
         {/* Skills Overview */}
-        <div className="mb-16">
+        <div className="mb-8">
           <div className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Skills Overview</h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
@@ -113,24 +115,8 @@ export default function Skills() {
           </div>
         </div>
 
-        {/* Detailed Skills */}
-        <div className="space-y-12">
-          {skillCategories.map((category, index) => (
-            <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{category.name}</h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">{category.description}</p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <SkillBar key={skillIndex} name={skill.name} level={skill.level} />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* Certifications */}
-        <div className="mt-12 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8">
+        <div className="mb-16 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Certifications</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -144,6 +130,16 @@ export default function Skills() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">AWS Certified Cloud Practitioner</h3>
                   <p className="text-gray-600 dark:text-gray-400">Amazon Web Services</p>
+                </div>
+              </div>
+              <div className="mt-4 mb-4 flex justify-center">
+                <div className="relative w-full h-72 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600">
+                  <Image 
+                    src="/aws_ccp_certification.jpg" 
+                    alt="AWS Certified Cloud Practitioner" 
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               </div>
               <p className="text-gray-700 dark:text-gray-300 text-sm">Issued Jun 14, 2025 · Expires Jun 14, 2028</p>
@@ -161,10 +157,38 @@ export default function Skills() {
                   <p className="text-gray-600 dark:text-gray-400">Amazon Web Services</p>
                 </div>
               </div>
+              <div className="mt-4 mb-4 flex justify-center">
+                <div className="relative w-full h-72 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600">
+                  <Image 
+                    src="/coming_soon_cert.svg" 
+                    alt="AWS Certified Solutions Architect - Coming Soon" 
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
               <p className="text-gray-700 dark:text-gray-300 text-sm">Planning soon</p>
             </div>
           </div>
         </div>
+
+        {/* Detailed Skills */}
+        <div className="space-y-12">
+          {skillCategories.map((category, index) => (
+            <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{category.name}</h2>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">{category.description}</p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                {category.skills.map((skill, skillIndex) => (
+                  <SkillBar key={skillIndex} name={skill.name} level={skill.level} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+
       </div>
     </div>
   );
