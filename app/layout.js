@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Brajesh Kumar Jha | AWS Data Engineer",
   description: "Professional portfolio of Brajesh Kumar Jha, AWS Data Engineer based in Hyderabad, India",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {

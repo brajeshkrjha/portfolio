@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Plus, Database, Code, Server, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -80,13 +81,11 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-indigo-900/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
                   <div className="relative p-6">
                     <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg shadow-lg mb-5">
-                      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5v14" />
-                      </svg>
+                      <Server className="h-6 w-6 text-white" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white tracking-tight mb-2">AWS Services</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                      Expert-level implementation of AWS cloud services for data processing and analytics
+                      Practical experience with AWS cloud services for data processing and analytics solutions
                     </p>
                     <div className="flex flex-wrap gap-2 mt-4">
                       <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300">AWS Glue</span>
@@ -102,9 +101,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-indigo-900/20 dark:to-purple-900/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
                   <div className="relative p-6">
                     <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg shadow-lg mb-5">
-                      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3z" />
-                      </svg>
+                      <Database className="h-6 w-6 text-white" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white tracking-tight mb-2">Data Engineering</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
@@ -124,9 +121,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-100 dark:from-purple-900/20 dark:to-blue-900/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
                   <div className="relative p-6">
                     <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg shadow-lg mb-5">
-                      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
+                      <Code className="h-6 w-6 text-white" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white tracking-tight mb-2">Infrastructure as Code</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
@@ -149,9 +144,7 @@ export default function Home() {
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-md text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               View All Skills
-              <svg className="ml-2 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
+              <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
             </Link>
           </div>
         </div>
@@ -176,7 +169,7 @@ export default function Home() {
             <div className="group bg-white dark:bg-gray-800 overflow-hidden shadow-lg rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
               <div className="relative h-48 bg-gradient-to-br from-blue-400 to-purple-500">
                 <Image 
-                  src="/project1.svg" 
+                  src="/data_tech1.jpg" 
                   alt="Commercial Prefill DataLake"
                   fill
                   className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
@@ -229,7 +222,7 @@ export default function Home() {
             <div className="group bg-white dark:bg-gray-800 overflow-hidden shadow-lg rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
               <div className="relative h-48 bg-gradient-to-br from-indigo-400 to-blue-500">
                 <Image 
-                  src="/project2.svg" 
+                  src="/data_tech2.jpg" 
                   alt="Erie Data Hub Framework"
                   fill
                   className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"

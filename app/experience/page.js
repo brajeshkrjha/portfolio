@@ -48,51 +48,52 @@ export default function Experience() {
   ];
 
   return (
-    <div className="min-h-screen py-12 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+    <div className="min-h-screen py-10 bg-white dark:bg-gray-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10">
+          <span className="inline-block text-xs font-medium tracking-wider uppercase text-blue-600 dark:text-blue-500 mb-1">Career</span>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white sm:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
             Professional Experience
           </h1>
-          <p className="mt-4 max-w-2xl text-xl text-gray-600 dark:text-gray-300 mx-auto">
+          <p className="mt-3 max-w-2xl text-sm md:text-base text-gray-600 dark:text-gray-300 mx-auto">
             My journey as an AWS Data Engineer
           </p>
         </div>
 
         {/* Work Experience Timeline */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Work Experience</h2>
+        <div className="mb-10">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Work Experience</h2>
           
           <div className="relative border-l border-gray-200 dark:border-gray-700 ml-3">
             {experiences.map((exp, index) => (
-              <div key={index} className="mb-10 ml-6">
-                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <svg className="w-2.5 h-2.5 text-blue-600 dark:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <div key={index} className="mb-8 ml-6">
+                <span className="absolute flex items-center justify-center w-5 h-5 bg-blue-100 rounded-full -left-2.5 ring-4 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                  <svg className="w-2 h-2 text-blue-600 dark:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                   </svg>
                 </span>
-                <div className="p-4 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                  <div className="flex justify-between items-center mb-3">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                <div className="p-3 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
                       {exp.title} at {exp.company}
                     </h3>
-                    <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+                    <span className="bg-blue-50 text-blue-700 text-xs font-medium mt-1 sm:mt-0 px-2 py-0.5 rounded-md dark:bg-blue-900 dark:text-blue-300">
                       {exp.period}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
                     {exp.location} · {exp.duration}
                   </p>
-                  <ul className="space-y-2 mb-4">
+                  <ul className="space-y-1.5 mb-3">
                     {exp.description.map((item, i) => (
-                      <li key={i} className="text-base text-gray-600 dark:text-gray-300">
-                        • {item}
+                      <li key={i} className="text-xs text-gray-600 dark:text-gray-300 pl-3 relative before:content-['•'] before:absolute before:left-0 before:text-gray-400">
+                        {item}
                       </li>
                     ))}
                   </ul>
-                  <div className="flex flex-wrap gap-2 mt-3">
+                  <div className="flex flex-wrap gap-1.5 mt-2">
                     {exp.technologies.map((tech, i) => (
-                      <span key={i} className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded dark:bg-gray-700 dark:text-gray-300">
+                      <span key={i} className="px-1.5 py-0.5 text-xs font-medium bg-gray-50 text-gray-600 rounded-md dark:bg-gray-700 dark:text-gray-300">
                         {tech}
                       </span>
                     ))}
@@ -105,20 +106,20 @@ export default function Experience() {
 
         {/* Projects Section */}
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Key Projects</h2>
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Key Projects</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {projects.map((project, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{project.title}</h3>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">{project.period}</span>
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                <div className="p-4">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white">{project.title}</h3>
+                    <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 sm:mt-0">{project.period}</span>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <p className="text-xs text-gray-600 dark:text-gray-300 mb-3">{project.description}</p>
+                  <div className="flex flex-wrap gap-1.5">
                     {project.technologies.map((tech, i) => (
-                      <span key={i} className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded dark:bg-blue-900 dark:text-blue-300">
+                      <span key={i} className="px-1.5 py-0.5 text-xs font-medium bg-gray-50 text-gray-600 rounded-md dark:bg-gray-700 dark:text-gray-300">
                         {tech}
                       </span>
                     ))}

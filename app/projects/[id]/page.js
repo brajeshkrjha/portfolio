@@ -36,7 +36,7 @@ export default function ProjectDetail() {
         "Enabled self-service analytics for business users",
         "Reduced infrastructure costs by 25% through optimization"
       ],
-      image: "/project1.svg"
+      image: "/data_tech1.jpg"
     },
     {
       id: "erie-data-hub-framework",
@@ -63,7 +63,7 @@ export default function ProjectDetail() {
         "Improved data quality and consistency across the organization",
         "Enhanced reporting capabilities with 360-degree view of insurance data"
       ],
-      image: "/project2.svg"
+      image: "/data_tech2.jpg"
     },
     {
       id: "rajya-web-app",
@@ -87,7 +87,7 @@ export default function ProjectDetail() {
         "Implemented responsive design for mobile and desktop users",
         "Received positive feedback for intuitive user interface"
       ],
-      image: "/project3.svg",
+      image: "/data_tech3.jpg",
       link: "https://github.com/brajeshkrjha/rajya"
     },
     {
@@ -112,7 +112,7 @@ export default function ProjectDetail() {
         "Implemented data persistence using local storage",
         "Created a responsive design that works across devices"
       ],
-      image: "/project4.svg",
+      image: "/data_tech4.jpg",
       link: "https://github.com/brajeshkrjha/todo-app"
     }
   ];
@@ -155,22 +155,22 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="min-h-screen py-12 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
+    <div className="min-h-screen py-10 bg-white dark:bg-gray-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-6">
           <Link 
             href="/projects" 
-            className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
+            className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
           >
-            <svg className="mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <svg className="mr-1.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
             </svg>
             Back to Projects
           </Link>
         </div>
 
-        <div className="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-          <div className="relative h-64 sm:h-80 md:h-96 bg-gradient-to-br from-blue-400 to-purple-500">
+        <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
+          <div className="relative h-56 sm:h-64 md:h-72 bg-gradient-to-br from-blue-400 to-purple-500">
             <Image 
               src={project.image} 
               alt={project.title}
@@ -178,29 +178,35 @@ export default function ProjectDetail() {
               className="object-cover"
               priority
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div className="absolute bottom-4 left-6 right-6">
+              <span className="inline-block px-2 py-1 text-xs font-medium bg-blue-600/90 text-white rounded-md backdrop-blur-sm">
+                {project.id.includes('data') ? 'Data Engineering' : 'Web Development'}
+              </span>
+            </div>
           </div>
           
-          <div className="p-6 md:p-8">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 md:mb-0">{project.title}</h1>
-              <span className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
+          <div className="p-5 md:p-6">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 md:mb-0">{project.title}</h1>
+              <span className="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded-full">
                 {project.period}
               </span>
             </div>
             
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">{project.description}</p>
+            <p className="text-base text-gray-600 dark:text-gray-300 mb-6">{project.description}</p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               <div className="col-span-2">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Project Details</h2>
-                <div className="prose prose-blue dark:prose-invert max-w-none">
-                  <ul className="space-y-4">
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Project Details</h2>
+                <div className="prose prose-sm prose-blue dark:prose-invert max-w-none">
+                  <ul className="space-y-3">
                     {project.longDescription.map((item, index) => (
                       <li key={index} className="flex items-start">
-                        <svg className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="h-4 w-4 text-blue-600 dark:text-blue-400 mr-1.5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -208,11 +214,11 @@ export default function ProjectDetail() {
               </div>
               
               <div>
-                <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-6">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Technologies Used</h3>
-                  <div className="flex flex-wrap gap-2">
+                <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-5 mb-5">
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Technologies Used</h3>
+                  <div className="flex flex-wrap gap-1.5">
                     {project.technologies.map((tech, index) => (
-                      <span key={index} className="px-3 py-1 text-sm font-medium bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                      <span key={index} className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
                         {tech}
                       </span>
                     ))}
@@ -220,15 +226,15 @@ export default function ProjectDetail() {
                 </div>
                 
                 {project.link && (
-                  <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Project Links</h3>
+                  <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-5">
+                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Project Links</h3>
                     <a 
                       href={project.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center text-blue-600 dark:text-blue-400 hover:underline"
+                      className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
                     >
-                      <svg className="mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <svg className="mr-1.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
                       View Source Code
@@ -238,30 +244,30 @@ export default function ProjectDetail() {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Challenges</h3>
-                <ul className="space-y-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-5">
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Challenges</h3>
+                <ul className="space-y-1.5">
                   {project.challenges.map((challenge, index) => (
                     <li key={index} className="flex items-start">
-                      <svg className="h-5 w-5 text-red-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-4 w-4 text-red-500 mr-1.5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                       </svg>
-                      <span className="text-gray-700 dark:text-gray-300">{challenge}</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">{challenge}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               
-              <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Outcomes</h3>
-                <ul className="space-y-2">
+              <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-5">
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Outcomes</h3>
+                <ul className="space-y-1.5">
                   {project.outcomes.map((outcome, index) => (
                     <li key={index} className="flex items-start">
-                      <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-4 w-4 text-green-500 mr-1.5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      <span className="text-gray-700 dark:text-gray-300">{outcome}</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">{outcome}</span>
                     </li>
                   ))}
                 </ul>

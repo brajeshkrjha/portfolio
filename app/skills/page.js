@@ -60,14 +60,14 @@ export default function Skills() {
 
   // Function to render skill bar
   const SkillBar = ({ name, level }) => (
-    <div className="mb-4">
+    <div className="mb-3">
       <div className="flex justify-between mb-1">
-        <span className="text-base font-medium text-gray-700 dark:text-gray-300">{name}</span>
-        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{level}%</span>
+        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{name}</span>
+        <span className="text-xs font-medium text-gray-500 dark:text-gray-400">{level}%</span>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+      <div className="w-full bg-gray-100 rounded-full h-1.5 dark:bg-gray-700">
         <div 
-          className="bg-blue-600 h-2.5 rounded-full" 
+          className="bg-blue-500 h-1.5 rounded-full" 
           style={{ width: `${level}%` }}
         ></div>
       </div>
@@ -75,65 +75,66 @@ export default function Skills() {
   );
 
   return (
-    <div className="min-h-screen py-12 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+    <div className="min-h-screen py-10 bg-white dark:bg-gray-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10">
+          <span className="inline-block text-xs font-medium tracking-wider uppercase text-blue-600 dark:text-blue-500 mb-1">Expertise</span>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white sm:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
             My Skills
           </h1>
-          <p className="mt-4 max-w-2xl text-xl text-gray-600 dark:text-gray-300 mx-auto">
+          <p className="mt-3 max-w-2xl text-sm md:text-base text-gray-600 dark:text-gray-300 mx-auto">
             Technical expertise and competencies in AWS data engineering
           </p>
         </div>
 
         {/* Skills Overview */}
-        <div className="mb-8">
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Skills Overview</h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
+        <div className="mb-6">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-5 md:p-6">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Skills Overview</h2>
+            <p className="text-sm text-gray-700 dark:text-gray-300 mb-5">
               As an AWS Data Engineer with 2 years of experience, I specialize in building and maintaining scalable, event-driven data pipelines using various AWS services. My expertise includes automating cloud infrastructure with Terraform and developing performant ETL workflows in PySpark to transform complex data for efficient analytics.
             </p>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-              <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold">10+</div>
-                <div className="text-gray-600 dark:text-gray-300 text-sm">AWS Services</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+              <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg shadow-sm">
+                <div className="text-blue-600 dark:text-blue-400 text-2xl font-bold">10+</div>
+                <div className="text-gray-600 dark:text-gray-300 text-xs">AWS Services</div>
               </div>
-              <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold">5+</div>
-                <div className="text-gray-600 dark:text-gray-300 text-sm">Data Projects</div>
+              <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg shadow-sm">
+                <div className="text-blue-600 dark:text-blue-400 text-2xl font-bold">5+</div>
+                <div className="text-gray-600 dark:text-gray-300 text-xs">Data Projects</div>
               </div>
-              <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold">3+</div>
-                <div className="text-gray-600 dark:text-gray-300 text-sm">ETL Pipelines</div>
+              <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg shadow-sm">
+                <div className="text-blue-600 dark:text-blue-400 text-2xl font-bold">3+</div>
+                <div className="text-gray-600 dark:text-gray-300 text-xs">ETL Pipelines</div>
               </div>
-              <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold">2</div>
-                <div className="text-gray-600 dark:text-gray-300 text-sm">Years Experience</div>
+              <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg shadow-sm">
+                <div className="text-blue-600 dark:text-blue-400 text-2xl font-bold">2</div>
+                <div className="text-gray-600 dark:text-gray-300 text-xs">Years Experience</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Certifications */}
-        <div className="mb-16 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Certifications</h2>
+        <div className="mb-10 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-5 md:p-6">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Certifications</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600">
-              <div className="flex items-center mb-4">
-                <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
-                  <svg className="h-6 w-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600">
+              <div className="flex items-center mb-3">
+                <div className="bg-blue-100 dark:bg-blue-900 p-2 rounded-full mr-3">
+                  <svg className="h-4 w-4 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">AWS Certified Cloud Practitioner</h3>
-                  <p className="text-gray-600 dark:text-gray-400">Amazon Web Services</p>
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white">AWS Certified Cloud Practitioner</h3>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">Amazon Web Services</p>
                 </div>
               </div>
-              <div className="mt-4 mb-4 flex justify-center">
-                <div className="relative w-full h-72 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600">
+              <div className="mt-3 mb-3 flex justify-center">
+                <div className="relative w-full h-56 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600">
                   <Image 
                     src="/aws_ccp_certification.jpg" 
                     alt="AWS Certified Cloud Practitioner" 
@@ -142,23 +143,23 @@ export default function Skills() {
                   />
                 </div>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">Issued Jun 14, 2025 · Expires Jun 14, 2028</p>
+              <p className="text-gray-700 dark:text-gray-300 text-xs">Issued Jun 14, 2025 · Expires Jun 14, 2028</p>
             </div>
             
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600">
-              <div className="flex items-center mb-4">
-                <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
-                  <svg className="h-6 w-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600">
+              <div className="flex items-center mb-3">
+                <div className="bg-blue-100 dark:bg-blue-900 p-2 rounded-full mr-3">
+                  <svg className="h-4 w-4 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">AWS Certified Solutions Architect - Associate</h3>
-                  <p className="text-gray-600 dark:text-gray-400">Amazon Web Services</p>
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white">AWS Certified Solutions Architect - Associate</h3>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">Amazon Web Services</p>
                 </div>
               </div>
-              <div className="mt-4 mb-4 flex justify-center">
-                <div className="relative w-full h-72 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600">
+              <div className="mt-3 mb-3 flex justify-center">
+                <div className="relative w-full h-56 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600">
                   <Image 
                     src="/coming_soon_cert.svg" 
                     alt="AWS Certified Solutions Architect - Coming Soon" 
@@ -167,19 +168,19 @@ export default function Skills() {
                   />
                 </div>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">Planning soon</p>
+              <p className="text-gray-700 dark:text-gray-300 text-xs">Planning soon</p>
             </div>
           </div>
         </div>
 
         {/* Detailed Skills */}
-        <div className="space-y-12">
+        <div className="space-y-6">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{category.name}</h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">{category.description}</p>
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-5 md:p-6">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{category.name}</h2>
+              <p className="text-xs text-gray-600 dark:text-gray-400 mb-4">{category.description}</p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
                 {category.skills.map((skill, skillIndex) => (
                   <SkillBar key={skillIndex} name={skill.name} level={skill.level} />
                 ))}
