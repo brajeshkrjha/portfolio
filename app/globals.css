@@ -27,3 +27,48 @@ body {
   line-height: 1.5;
   letter-spacing: -0.01em;
 }
+
+.premium-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.premium-loader .ring {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #e5e7eb;
+  border-top: 6px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+  margin-bottom: -40px;
+  opacity: 0.8;
+}
+.premium-loader .ring:nth-child(2) {
+  width: 40px;
+  height: 40px;
+  border-width: 4px;
+  border-top: 4px solid #06b6d4;
+  animation-delay: 0.2s;
+  opacity: 0.7;
+}
+.premium-loader .ring:nth-child(3) {
+  width: 20px;
+  height: 20px;
+  border-width: 3px;
+  border-top: 3px solid #f59e42;
+  animation-delay: 0.4s;
+  opacity: 0.6;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.loading-text {
+  margin-top: 60px;
+  font-size: 1.25rem;
+  color: #6366f1;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(99,102,241,0.15);
+}
