@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import UdemyCertificatesSlider from "../../components/UdemyCertificatesSlider";
 
 export default function Skills() {
   // Define skill categories and their items
@@ -171,6 +172,12 @@ export default function Skills() {
               <p className="text-gray-700 dark:text-gray-300 text-xs">Planning soon</p>
             </div>
           </div>
+        </div>
+
+        {/* Udemy Certificates */}
+        <div className="mb-10 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-5 md:p-6">
+          <h2 className="text-lg font-bold text-purple-700 dark:text-purple-400 mb-4">Udemy Certificates</h2>
+          <UdemyCertificatesSlider />
         </div>
 
         {/* Detailed Skills */}
