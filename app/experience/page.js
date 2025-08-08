@@ -1,3 +1,5 @@
+import SectionHeader from '../../components/SectionHeader';
+
 export default function Experience() {
   // Define experience data
   const experiences = [
@@ -50,15 +52,11 @@ export default function Experience() {
   return (
     <div className="min-h-screen py-10 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <span className="inline-block text-xs font-medium tracking-wider uppercase text-blue-600 dark:text-blue-500 mb-1">Career</span>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white sm:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
-            Professional Experience
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm md:text-base text-gray-600 dark:text-gray-300 mx-auto">
-            My journey as an AWS Data Engineer
-          </p>
-        </div>
+        <SectionHeader 
+          eyebrow="Career"
+          title="Professional Experience"
+          description="My journey as an AWS Data Engineer"
+        />
 
         {/* Work Experience Timeline */}
         <div className="mb-10">

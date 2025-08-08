@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Plus, Database, Code, Server, ArrowRight } from 'lucide-react';
+import { Server, Database, Code, Cog, ArrowRight } from 'lucide-react';
+import SectionHeader from '../components/SectionHeader';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
                     src="/my_img.jpg" 
                     alt="Brajesh Kumar Jha" 
                     fill 
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                     priority
                   />
@@ -50,6 +52,7 @@ export default function Home() {
                   src="/my_img.jpg" 
                   alt="Brajesh Kumar Jha" 
                   fill 
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                   priority
                 />
@@ -62,17 +65,11 @@ export default function Home() {
       {/* Skills Preview Section */}
       <section className="py-12 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="inline-block px-3 py-1 text-sm font-medium bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300 mb-3">
-              Professional Skills
-            </span>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
-              My Expertise
-            </h2>
-            <p className="mt-3 max-w-2xl text-base text-gray-600 dark:text-gray-300 mx-auto">
-              Specialized in AWS data engineering solutions with a focus on scalable and efficient architectures
-            </p>
-          </div>
+          <SectionHeader 
+            eyebrow="Professional Skills"
+            title="My Expertise"
+            description="Specialized in AWS data engineering solutions with a focus on scalable and efficient architectures"
+          />
 
           <div className="mt-10">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -172,6 +169,7 @@ export default function Home() {
                   src="/data_tech1.jpg" 
                   alt="Commercial Prefill DataLake"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -225,6 +223,7 @@ export default function Home() {
                   src="/data_tech2.jpg" 
                   alt="Erie Data Hub Framework"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import UdemyCertificatesSlider from "../../components/UdemyCertificatesSlider";
+import SectionHeader from '../../components/SectionHeader';
 
 export default function Skills() {
   // Define skill categories and their items
@@ -78,15 +79,11 @@ export default function Skills() {
   return (
     <div className="min-h-screen py-10 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <span className="inline-block text-xs font-medium tracking-wider uppercase text-blue-600 dark:text-blue-500 mb-1">Expertise</span>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white sm:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
-            My Skills
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm md:text-base text-gray-600 dark:text-gray-300 mx-auto">
-            Technical expertise and competencies in AWS data engineering
-          </p>
-        </div>
+        <SectionHeader 
+          eyebrow="Expertise"
+          title="My Skills"
+          description="Technical expertise and competencies in AWS data engineering"
+        />
 
         {/* Skills Overview */}
         <div className="mb-6">
@@ -140,6 +137,8 @@ export default function Skills() {
                     src="/aws_ccp_certification.jpg" 
                     alt="AWS Certified Cloud Practitioner" 
                     fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-contain"
                   />
                 </div>
@@ -165,6 +164,7 @@ export default function Skills() {
                     src="/coming_soon_cert.svg" 
                     alt="AWS Certified Solutions Architect - Coming Soon" 
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-contain"
                   />
                 </div>

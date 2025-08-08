@@ -3,6 +3,7 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import SectionHeader from '../../../components/SectionHeader';
 
 export default function ProjectDetail() {
   const params = useParams();
@@ -137,12 +138,11 @@ export default function ProjectDetail() {
     return (
       <div className="min-h-screen py-12 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl mb-6">
-            Project Not Found
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            Sorry, the project you're looking for doesn't exist.
-          </p>
+          <SectionHeader 
+            eyebrow="404"
+            title="Project Not Found"
+            description="Sorry, the project you're looking for doesn't exist."
+          />
           <Link 
             href="/projects" 
             className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
@@ -175,6 +175,7 @@ export default function ProjectDetail() {
               src={project.image} 
               alt={project.title}
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
               priority
             />

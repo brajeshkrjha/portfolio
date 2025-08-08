@@ -1,18 +1,16 @@
 import Image from 'next/image';
+import SectionHeader from '../../components/SectionHeader';
 import { User, Briefcase, MapPin, Calendar, Mail } from 'lucide-react';
 
 export default function About() {
   return (
     <div className="min-h-screen py-12 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
-            About Me
-          </h1>
-          <p className="mt-4 max-w-2xl text-xl text-gray-600 dark:text-gray-300 mx-auto">
-            Get to know more about my background and journey
-          </p>
-        </div>
+        <SectionHeader 
+          eyebrow="About"
+          title="About Me"
+          description="Get to know more about my background and journey"
+        />
 
         <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
           <div className="md:w-1/3">
@@ -80,6 +78,7 @@ export default function About() {
                         src="https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/0_z53c0ybh/def_height/2700/def_width/2700/version/100012/type/1" 
                         alt="ValueMomentum" 
                         fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         style={{ objectFit: 'cover' }}
                         className="transition-transform hover:scale-105 duration-300"
                       />
@@ -105,6 +104,7 @@ export default function About() {
                         src="https://technotimes.info/wp-content/uploads/2025/06/image-3.png" 
                         alt="Bengal Institute of Technology" 
                         fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         style={{ objectFit: 'cover' }}
                         className="transition-transform hover:scale-105 duration-300"
                       />
@@ -127,6 +127,7 @@ export default function About() {
                         src="https://rsvm.in/uploads/gallery/media/Front.jpg" 
                         alt="Rajkamal Saraswati Vidya Mandir" 
                         fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         style={{ objectFit: 'cover' }}
                         className="transition-transform hover:scale-105 duration-300"
                       />

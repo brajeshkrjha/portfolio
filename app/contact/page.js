@@ -1,5 +1,7 @@
 'use client';
+
 import { useState } from 'react';
+import SectionHeader from '../../components/SectionHeader';
 
 export default function Contact() {
   // Form state
@@ -47,15 +49,11 @@ export default function Contact() {
   return (
     <div className="min-h-screen py-12 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white relative inline-block">
-            <span className="absolute -top-6 -left-6 text-xs font-medium bg-blue-100 text-blue-800 py-1 px-2 rounded-md dark:bg-blue-900 dark:text-blue-300">Connect</span>
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Get In Touch</span>
-          </h1>
-          <p className="mt-3 max-w-2xl text-base text-gray-600 dark:text-gray-300 mx-auto">
-            Have a question or want to work together? Feel free to reach out!
-          </p>
-        </div>
+        <SectionHeader 
+          eyebrow="Connect"
+          title="Get In Touch"
+          description="Have a question or want to work together? Feel free to reach out!"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Information */}

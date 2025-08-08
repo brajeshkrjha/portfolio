@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import SectionHeader from '../../components/SectionHeader';
 
 export default function Projects() {
   // Define projects data
@@ -114,17 +115,11 @@ export default function Projects() {
   return (
     <div className="min-h-screen py-12 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <span className="inline-block px-3 py-1 text-sm font-medium bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300 mb-3">
-            Portfolio
-          </span>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
-            My Projects
-          </h1>
-          <p className="mt-3 max-w-2xl text-base text-gray-600 dark:text-gray-300 mx-auto">
-            A showcase of my work in data engineering, cloud infrastructure, and web development.
-          </p>
-        </div>
+        <SectionHeader 
+          eyebrow="Portfolio"
+          title="My Projects"
+          description="A showcase of my work in data engineering, cloud infrastructure, and web development."
+        />
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -135,6 +130,7 @@ export default function Projects() {
                   src={project.image} 
                   alt={project.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
