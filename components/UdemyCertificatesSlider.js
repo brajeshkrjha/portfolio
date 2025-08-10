@@ -31,7 +31,7 @@ const certificates = [
   }
 ];
 
-export default function UdemyCertificatesSlider() {
+export default function UdemyCertificatesSlider({ onImageClick }) {
   const [startIdx, setStartIdx] = useState(0);
   // Use responsive visible count based on screen size
   const [visibleCount, setVisibleCount] = useState(2);
@@ -114,7 +114,15 @@ export default function UdemyCertificatesSlider() {
                   className="flex-shrink-0 flex-grow-0 px-2 flex flex-col items-center"
                   style={{ width: `${100 / visibleCount}%` }}
                 >
-                  <div className="relative w-full md:h-56 h-72 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600 mb-2 shadow-sm hover:shadow-md transition-all duration-500 group">
+                  <div 
+                    className="relative w-full md:h-56 h-72 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600 mb-2 shadow-sm hover:shadow-md transition-all duration-500 group cursor-pointer"
+                    onClick={() => {
+                      // Only enable modal on larger screens
+                      if (onImageClick && typeof window !== 'undefined' && window.innerWidth >= 768) {
+                        onImageClick(cert.src, cert.alt);
+                      }
+                    }}
+                  >
                     <div className="absolute inset-0 bg-gradient-to-b from-purple-100/0 to-purple-100/10 dark:from-purple-900/0 dark:to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <Image 
                       src={cert.src} 
@@ -122,7 +130,13 @@ export default function UdemyCertificatesSlider() {
                       fill 
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-contain transform group-hover:scale-105 transition-transform duration-500" 
+                      onContextMenu={(e) => e.preventDefault()}
+                      draggable="false"
                     />
+                    {/* Overlay with hint for desktop users */}
+                    <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300 hidden md:flex items-center justify-center">
+                      <span className="text-transparent hover:text-white text-sm font-medium transition-colors duration-300">Click to enlarge</span>
+                    </div>
                   </div>
                   <span className="text-sm font-medium text-gray-700 dark:text-gray-300 mt-2 px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-800 shadow-sm transform group-hover:scale-105 transition-all duration-300">{cert.label}</span>
                 </div>

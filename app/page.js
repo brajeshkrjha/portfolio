@@ -1,27 +1,56 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Server, Database, Code, Cog, ArrowRight } from 'lucide-react';
+import { Server, Database, Code, Cog, ArrowRight, ChevronDown } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 
 export default function Home() {
+  // State for animations and effects
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  
+  // Handle scroll effects
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    
+    // Set loaded state after a short delay for entrance animations
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
+  }, []);
+  
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-16 lg:py-24 px-4 sm:px-6 relative overflow-hidden bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        {/* Background gradient effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent dark:from-blue-900/20 dark:to-transparent opacity-70 dark:opacity-30"></div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="md:w-1/2 mb-8 md:mb-0">
+            <div className={`md:w-1/2 mb-8 md:mb-0 transform transition-all duration-1000 ${isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl mb-3">
                 <span className="block">Hi, I'm Brajesh</span>
                 <span className="block text-blue-600 dark:text-blue-400">Cloud Data Engineer</span>
               </h1>
-              <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 sm:mt-4 sm:text-base md:mt-4 md:text-lg lg:mx-0 mb-5">
+              <div className="h-1 w-20 bg-blue-600 mb-4"></div>
+              <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 sm:mt-4 sm:text-base md:mt-4 md:text-lg lg:mx-0 mb-5 leading-relaxed">
                 Building scalable data solutions and ETL pipelines on AWS. Passionate about transforming raw data into valuable insights.
               </p>
               
               {/* Profile image shown in mobile view before buttons */}
               <div className="flex justify-center mb-6 md:hidden">
-                <div className="w-56 h-56 relative rounded-full overflow-hidden border-2 border-blue-600 dark:border-blue-400 shadow-lg">
+                <div className="w-56 h-56 relative rounded-full overflow-hidden border-2 border-blue-600 dark:border-blue-400 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <Image 
                     src="/my_img.jpg" 
                     alt="Brajesh Kumar Jha" 
@@ -29,25 +58,29 @@ export default function Home() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                     priority
+                    onContextMenu={(e) => e.preventDefault()}
+                    draggable="false"
                   />
                 </div>
               </div>
               
               <div className="mt-5 sm:mt-6 sm:flex">
-                <div className="rounded-md shadow">
-                  <Link href="/projects" className="w-full flex items-center justify-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-3 md:text-base md:px-8">
+                <div className="rounded-md shadow group">
+                  <Link href="/projects" className="w-full flex items-center justify-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-3 md:text-base md:px-8 transition-all duration-300">
                     View My Work
+                    <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
                 </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <Link href="/contact" className="w-full flex items-center justify-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 md:py-3 md:text-base md:px-8">
+                <div className="mt-3 sm:mt-0 sm:ml-3 group">
+                  <Link href="/contact" className="w-full flex items-center justify-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 md:py-3 md:text-base md:px-8 transition-all duration-300">
                     Contact Me
+                    <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="md:w-1/2 hidden md:flex justify-center">
-              <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 relative rounded-full overflow-hidden border-2 border-blue-600 dark:border-blue-400 shadow-lg">
+            <div className={`md:w-1/2 hidden md:flex justify-center transform transition-all duration-1000 ${isLoaded ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
+              <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 relative rounded-full overflow-hidden border-2 border-blue-600 dark:border-blue-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
                 <Image 
                   src="/my_img.jpg" 
                   alt="Brajesh Kumar Jha" 
@@ -55,16 +88,29 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                   priority
+                  onContextMenu={(e) => e.preventDefault()}
+                  draggable="false"
                 />
               </div>
             </div>
           </div>
         </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce cursor-pointer">
+          <span className="text-sm text-gray-600 dark:text-gray-400 mb-2">Scroll to explore</span>
+          <ChevronDown className="h-6 w-6 text-blue-600" />
+        </div>
       </section>
 
       {/* Skills Preview Section */}
-      <section className="py-12 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 relative">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-5 dark:opacity-10">
+          <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'0.2\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeader 
             eyebrow="Professional Skills"
             title="My Expertise"
@@ -73,11 +119,11 @@ export default function Home() {
 
           <div className="mt-10">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="group">
-                <div className="relative overflow-hidden bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 transform hover:-translate-y-1">
+              <div className={`group transform transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ transitionDelay: '100ms' }}>
+                <div className="relative overflow-hidden bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 transform hover:-translate-y-1 border-b-4 border-transparent hover:border-blue-600">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-indigo-900/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
                   <div className="relative p-6">
-                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg shadow-lg mb-5">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg shadow-lg mb-5 transform group-hover:scale-110 transition-transform duration-300">
                       <Server className="h-6 w-6 text-white" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white tracking-tight mb-2">AWS Services</h3>
@@ -93,11 +139,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="group">
-                <div className="relative overflow-hidden bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 transform hover:-translate-y-1">
-                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-indigo-900/20 dark:to-purple-900/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+              <div className={`group transform transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ transitionDelay: '200ms' }}>
+                <div className="relative overflow-hidden bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 transform hover:-translate-y-1 border-b-4 border-transparent hover:border-green-600">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-teal-100 dark:from-green-900/20 dark:to-teal-900/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
                   <div className="relative p-6">
-                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg shadow-lg mb-5">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg shadow-lg mb-5 transform group-hover:scale-110 transition-transform duration-300">
                       <Database className="h-6 w-6 text-white" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white tracking-tight mb-2">Data Engineering</h3>
@@ -105,19 +151,19 @@ export default function Home() {
                       Designing and implementing scalable data pipelines and analytics solutions
                     </p>
                     <div className="flex flex-wrap gap-2 mt-4">
-                      <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300">ETL Pipelines</span>
-                      <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300">Data Lakes</span>
-                      <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300">PySpark</span>
+                      <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full dark:bg-green-900 dark:text-green-300">ETL Pipelines</span>
+                      <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full dark:bg-green-900 dark:text-green-300">Data Lakes</span>
+                      <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full dark:bg-green-900 dark:text-green-300">PySpark</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="group">
-                <div className="relative overflow-hidden bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 transform hover:-translate-y-1">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-100 dark:from-purple-900/20 dark:to-blue-900/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+              <div className={`group transform transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ transitionDelay: '300ms' }}>
+                <div className="relative overflow-hidden bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 transform hover:-translate-y-1 border-b-4 border-transparent hover:border-amber-600">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
                   <div className="relative p-6">
-                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg shadow-lg mb-5">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg shadow-lg mb-5 transform group-hover:scale-110 transition-transform duration-300">
                       <Code className="h-6 w-6 text-white" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white tracking-tight mb-2">Infrastructure as Code</h3>
@@ -125,9 +171,9 @@ export default function Home() {
                       Creating reproducible and scalable infrastructure through automation
                     </p>
                     <div className="flex flex-wrap gap-2 mt-4">
-                      <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300">Terraform</span>
-                      <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300">CloudFormation</span>
-                      <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300">CDK</span>
+                      <span className="px-2 py-1 text-xs font-medium bg-amber-100 text-amber-800 rounded-full dark:bg-amber-900 dark:text-amber-300">Terraform</span>
+                      <span className="px-2 py-1 text-xs font-medium bg-amber-100 text-amber-800 rounded-full dark:bg-amber-900 dark:text-amber-300">CloudFormation</span>
+                      <span className="px-2 py-1 text-xs font-medium bg-amber-100 text-amber-800 rounded-full dark:bg-amber-900 dark:text-amber-300">CDK</span>
                     </div>
                   </div>
                 </div>
@@ -138,10 +184,10 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link 
               href="/skills" 
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-md text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="group inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
             >
-              View All Skills
-              <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
+              <span>View All Skills</span>
+              <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
         </div>
@@ -163,7 +209,7 @@ export default function Home() {
           </div>
 
           <div className="mt-10 grid gap-8 md:grid-cols-2">
-            <div className="group bg-white dark:bg-gray-800 overflow-hidden shadow-lg rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+            <div className={`group bg-white dark:bg-gray-800 overflow-hidden shadow-lg rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-500 hover:shadow-xl transform hover:-translate-y-2 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ transitionDelay: '200ms' }}>
               <div className="relative h-48 bg-gradient-to-br from-blue-400 to-purple-500">
                 <Image 
                   src="/data_tech1.jpg" 
@@ -171,6 +217,8 @@ export default function Home() {
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                  onContextMenu={(e) => e.preventDefault()}
+                  draggable="false"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -207,17 +255,17 @@ export default function Home() {
                 </div>
                 <Link 
                   href="/projects/commercial-prefill-datalake"
-                  className="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+                  className="group inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
                 >
                   View Details
-                  <svg className="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <svg className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </Link>
               </div>
             </div>
 
-            <div className="group bg-white dark:bg-gray-800 overflow-hidden shadow-lg rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+            <div className={`group bg-white dark:bg-gray-800 overflow-hidden shadow-lg rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-500 hover:shadow-xl transform hover:-translate-y-2 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ transitionDelay: '300ms' }}>
               <div className="relative h-48 bg-gradient-to-br from-indigo-400 to-blue-500">
                 <Image 
                   src="/data_tech2.jpg" 
@@ -225,6 +273,8 @@ export default function Home() {
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                  onContextMenu={(e) => e.preventDefault()}
+                  draggable="false"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -261,10 +311,10 @@ export default function Home() {
                 </div>
                 <Link 
                   href="/projects/erie-data-hub-framework"
-                  className="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+                  className="group inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
                 >
                   View Details
-                  <svg className="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <svg className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </Link>
@@ -275,10 +325,10 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link 
               href="/projects" 
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-md text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="group inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-md text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transform hover:-translate-y-1"
             >
               View All Projects
-              <svg className="ml-2 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg className="ml-2 -mr-1 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </Link>

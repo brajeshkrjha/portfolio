@@ -132,6 +132,8 @@ export default function Projects() {
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                  onContextMenu={(e) => e.preventDefault()}
+                  draggable="false"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-3 left-4 right-4">

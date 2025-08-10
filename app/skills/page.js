@@ -1,8 +1,30 @@
+"use client";
+
+import { useState } from 'react';
 import Image from 'next/image';
 import UdemyCertificatesSlider from "../../components/UdemyCertificatesSlider";
 import SectionHeader from '../../components/SectionHeader';
+import ImageModal from '../../components/ImageModal';
 
 export default function Skills() {
+  // State for image modal
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState({
+    src: '',
+    alt: ''
+  });
+
+  // Function to open modal with selected image
+  const openImageModal = (src, alt) => {
+    setSelectedImage({ src, alt });
+    setModalOpen(true);
+  };
+
+  // Function to close modal
+  const closeImageModal = () => {
+    setModalOpen(false);
+  };
+  
   // Define skill categories and their items
   const skillCategories = [
     {
@@ -132,7 +154,15 @@ export default function Skills() {
                 </div>
               </div>
               <div className="mt-3 mb-3 flex justify-center">
-                <div className="relative w-full h-56 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600">
+                <div 
+                  className="relative w-full h-56 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600 cursor-pointer hover:shadow-lg transition-shadow duration-300"
+                  onClick={() => {
+                    // Only enable modal on larger screens
+                    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+                      openImageModal('/aws_ccp_certification.jpg', 'AWS Certified Cloud Practitioner');
+                    }
+                  }}
+                >
                   <Image 
                     src="/aws_ccp_certification.jpg" 
                     alt="AWS Certified Cloud Practitioner" 
@@ -140,7 +170,13 @@ export default function Skills() {
                     priority
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-contain"
+                    onContextMenu={(e) => e.preventDefault()}
+                    draggable="false"
                   />
+                  {/* Overlay with hint for desktop users */}
+                  <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300 hidden md:flex items-center justify-center">
+                    <span className="text-transparent hover:text-white text-sm font-medium transition-colors duration-300">Click to enlarge</span>
+                  </div>
                 </div>
               </div>
               <p className="text-gray-700 dark:text-gray-300 text-xs">Issued Jun 14, 2025 · Expires Jun 14, 2028</p>
@@ -159,14 +195,28 @@ export default function Skills() {
                 </div>
               </div>
               <div className="mt-3 mb-3 flex justify-center">
-                <div className="relative w-full h-56 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600">
+                <div 
+                  className="relative w-full h-56 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600 cursor-pointer hover:shadow-lg transition-shadow duration-300"
+                  onClick={() => {
+                    // Only enable modal on larger screens
+                    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+                      openImageModal('/coming_soon_cert.svg', 'AWS Certified Solutions Architect - Coming Soon');
+                    }
+                  }}
+                >
                   <Image 
                     src="/coming_soon_cert.svg" 
                     alt="AWS Certified Solutions Architect - Coming Soon" 
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-contain"
+                    onContextMenu={(e) => e.preventDefault()}
+                    draggable="false"
                   />
+                  {/* Overlay with hint for desktop users */}
+                  <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300 hidden md:flex items-center justify-center">
+                    <span className="text-transparent hover:text-white text-sm font-medium transition-colors duration-300">Click to enlarge</span>
+                  </div>
                 </div>
               </div>
               <p className="text-gray-700 dark:text-gray-300 text-xs">Planning soon</p>
@@ -177,7 +227,7 @@ export default function Skills() {
         {/* Udemy Certificates */}
         <div className="mb-10 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-5 md:p-6">
           <h2 className="text-lg font-bold text-purple-700 dark:text-purple-400 mb-4">Udemy Certificates</h2>
-          <UdemyCertificatesSlider />
+          <UdemyCertificatesSlider onImageClick={openImageModal} />
         </div>
 
         {/* Detailed Skills */}
@@ -198,6 +248,14 @@ export default function Skills() {
 
 
       </div>
+      
+      {/* Image Modal */}
+      <ImageModal 
+        isOpen={modalOpen} 
+        onClose={closeImageModal} 
+        imageSrc={selectedImage.src} 
+        imageAlt={selectedImage.alt} 
+      />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import SectionHeader from '../../components/SectionHeader';
 import { User, Briefcase, MapPin, Calendar, Mail } from 'lucide-react';
@@ -22,6 +24,8 @@ export default function About() {
                 height={400}
                 className="w-full h-auto"
                 priority
+                onContextMenu={(e) => e.preventDefault()}
+                draggable="false"
               />
             </div>
 
@@ -81,6 +85,8 @@ export default function About() {
                         sizes="(max-width: 768px) 100vw, 33vw"
                         style={{ objectFit: 'cover' }}
                         className="transition-transform hover:scale-105 duration-300"
+                        onContextMenu={(e) => e.preventDefault()}
+                        draggable="false"
                       />
                     </div>
                   </div>
@@ -107,6 +113,8 @@ export default function About() {
                         sizes="(max-width: 768px) 100vw, 33vw"
                         style={{ objectFit: 'cover' }}
                         className="transition-transform hover:scale-105 duration-300"
+                        onContextMenu={(e) => e.preventDefault()}
+                        draggable="false"
                       />
                     </div>
                   </div>
@@ -130,6 +138,8 @@ export default function About() {
                         sizes="(max-width: 768px) 100vw, 33vw"
                         style={{ objectFit: 'cover' }}
                         className="transition-transform hover:scale-105 duration-300"
+                        onContextMenu={(e) => e.preventDefault()}
+                        draggable="false"
                       />
                     </div>
                   </div>

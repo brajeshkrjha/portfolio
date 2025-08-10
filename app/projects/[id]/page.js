@@ -178,6 +178,8 @@ export default function ProjectDetail() {
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
               priority
+              onContextMenu={(e) => e.preventDefault()}
+              draggable="false"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-4 left-6 right-6">
