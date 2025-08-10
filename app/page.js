@@ -13,7 +13,7 @@ export default function Home() {
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl mb-3">
                 <span className="block">Hi, I'm Brajesh</span>
-                <span className="block text-blue-600 dark:text-blue-400">AWS Data Engineer</span>
+                <span className="block text-blue-600 dark:text-blue-400">Cloud Data Engineer</span>
               </h1>
               <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 sm:mt-4 sm:text-base md:mt-4 md:text-lg lg:mx-0 mb-5">
                 Building scalable data solutions and ETL pipelines on AWS. Passionate about transforming raw data into valuable insights.
@@ -68,7 +68,7 @@ export default function Home() {
           <SectionHeader 
             eyebrow="Professional Skills"
             title="My Expertise"
-            description="Specialized in AWS data engineering solutions with a focus on scalable and efficient architectures"
+            description="Specialized in cloud data engineering solutions with a focus on scalable and efficient architectures"
           />
 
           <div className="mt-10">

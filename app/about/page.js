@@ -36,7 +36,7 @@ export default function About() {
                 
                 <div className="flex items-center">
                   <Briefcase className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-3" />
-                  <span className="text-gray-700 dark:text-gray-300">AWS Data Engineer</span>
+                  <span className="text-gray-700 dark:text-gray-300">Cloud Data Engineer</span>
                 </div>
                 
                 <div className="flex items-center">
@@ -69,7 +69,7 @@ export default function About() {
                       I started my career with ValueMomentum in August 2023, where I've been working in the Data Engineering department.
                     </p>
                     <p className="text-gray-700 dark:text-gray-300">
-                      In my first project, I had the opportunity to work with MarkLogic and Data Hub Framework to implement data harmonization, consumption, data lake in AWS, and REST API services. Later, I moved to a full-fledged AWS data engineering project, where I gained experience with various AWS services as part of the data lake team. I collaborate with team members from both India and the USA, following Agile methodologies. Currently, I'm continuing in the same team and work role.
+                      In my first project, I had the opportunity to work with MarkLogic and Data Hub Framework to implement data harmonization, consumption, data lake in AWS, and REST API services. Later, I moved to a full-fledged cloud data engineering project, where I gained experience with various cloud services as part of the data lake team. I collaborate with team members from both India and the USA, following Agile methodologies. Currently, I'm continuing in the same team and work role.
                     </p>
                   </div>
                   <div className="w-full md:w-1/3 flex-shrink-0">

@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Home, User, Code, Briefcase, FolderKanban, Mail } from 'lucide-react';
+import { Menu, X, Home, User, Code, Briefcase, FolderKanban, Mail, FileText } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,6 +49,10 @@ export default function Navbar() {
             <Link href="/contact" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center gap-1">
               <Mail className="h-4 w-4" />
               Contact
+            </Link>
+            <Link href="/resume/Brajesh_Kumar_Jha_Resume.pdf" target="_blank" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center gap-1">
+              <FileText className="h-4 w-4" />
+              Resume
             </Link>
           </div>
 
@@ -101,6 +105,10 @@ export default function Navbar() {
           <Link href="/contact" onClick={closeMenu} className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium">
             <Mail className="h-5 w-5" />
             Contact
+          </Link>
+          <Link href="/resume/Brajesh_Kumar_Jha_Resume.pdf" target="_blank" onClick={closeMenu} className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium">
+            <FileText className="h-5 w-5" />
+            Resume
           </Link>
         </div>
       </div>

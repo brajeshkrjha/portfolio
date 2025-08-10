@@ -82,7 +82,7 @@ export default function Skills() {
         <SectionHeader 
           eyebrow="Expertise"
           title="My Skills"
-          description="Technical expertise and competencies in AWS data engineering"
+          description="Technical expertise and competencies in cloud data engineering"
         />
 
         {/* Skills Overview */}
@@ -90,7 +90,7 @@ export default function Skills() {
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-5 md:p-6">
             <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Skills Overview</h2>
             <p className="text-sm text-gray-700 dark:text-gray-300 mb-5">
-              As an AWS Data Engineer with 2 years of experience, I specialize in building and maintaining scalable, event-driven data pipelines using various AWS services. My expertise includes automating cloud infrastructure with Terraform and developing performant ETL workflows in PySpark to transform complex data for efficient analytics.
+              As a Cloud Data Engineer with 2 years of experience, I specialize in building and maintaining scalable, event-driven data pipelines using various cloud services. My expertise includes automating cloud infrastructure with Terraform and developing performant ETL workflows in PySpark to transform complex data for efficient analytics.
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
